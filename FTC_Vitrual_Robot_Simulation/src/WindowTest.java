@@ -45,13 +45,13 @@ public class WindowTest extends Application{
         //layout.getChildren().add(tbut);
 
         mainGroup = new Group();
-        Scene scene = new Scene(mainGroup); // suggested 700x700
+        Scene scene = new Scene(mainGroup,1200,720); // suggested 700x700
 
         mainHorizontal = new HBox();
         mainHorizontal.prefWidthProperty().bind(primaryStage.widthProperty());
         mainHorizontal.prefHeightProperty().bind(primaryStage.heightProperty());
 
-        field = new Image(new FileInputStream(System.getProperty("user.dir") + "/Skystone Dark Field 750x750.png"));
+        field = new Image(new FileInputStream(System.getProperty("user.dir") + "/Skystone Dark Field 4 720x720.png"));
         fieldView = new ImageView();
         fieldView.setImage(field);
 

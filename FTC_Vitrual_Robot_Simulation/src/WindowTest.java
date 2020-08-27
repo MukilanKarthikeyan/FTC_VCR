@@ -32,7 +32,7 @@ public class WindowTest extends Application{
     private Image field;
     private ImageView fieldView;
     Group mainGroup;
-
+    private HBox mainHorizontal;
     Button tbut;
     public static void main(String[] args){
         launch(args);
@@ -45,14 +45,19 @@ public class WindowTest extends Application{
         //layout.getChildren().add(tbut);
 
         mainGroup = new Group();
+        Scene scene = new Scene(mainGroup); // suggested 700x700
 
-        field = new Image(new FileInputStream(System.getProperty("user.dir") + "/Skystone Field.png"));
+        mainHorizontal = new HBox();
+        mainHorizontal.prefWidthProperty().bind(primaryStage.widthProperty());
+        mainHorizontal.prefHeightProperty().bind(primaryStage.heightProperty());
+
+        field = new Image(new FileInputStream(System.getProperty("user.dir") + "/Skystone Dark Field 750x750.png"));
         fieldView = new ImageView();
         fieldView.setImage(field);
 
         mainGroup.getChildren().add(fieldView);
 
-        Scene scene = new Scene(mainGroup, 700,700);
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }
